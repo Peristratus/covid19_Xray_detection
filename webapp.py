@@ -26,7 +26,7 @@ st.subheader('Data Information')
 #show the data as a table
 st.dataframe(df)
 #show statistics on the data
-st.right(df.describe())
+st.write(df.describe())
 #show the data as a chart
 chart = st.bar_chart(df)
 
@@ -67,10 +67,6 @@ user_input = get_user_input()
 #set a sub header and display the users input
 st.subheader('User Input:')
 st.write(user_input)
-
-
-#store the user input into the variable
-user_input = get_user_input()
 
 
 #set a subheader and display the users input
