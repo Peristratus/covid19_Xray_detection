@@ -11,7 +11,7 @@ import streamlit as st
 st.write("""
 
 # Diabetes Detection
-Detect is someone has diabetes using machine learning
+Detect if someone has diabetes using Artificial Intelligence 
 
 """)
 #open and display Image
