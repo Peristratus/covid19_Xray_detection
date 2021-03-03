@@ -68,11 +68,6 @@ user_input = get_user_input()
 st.subheader('User Input:')
 st.write(user_input)
 
-
-#set a subheader and display the users input
-st.subheader('User Input:')
-st.write(user_input)
-
 #create and train the model
 RandomForestClassifier = RandomForestClassifier()
 RandomForestClassifier.fit(X_train,  Y_train )
