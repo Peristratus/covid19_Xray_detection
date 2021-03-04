@@ -52,4 +52,12 @@ x_scaler.fit(X)
 column_names = X.columns
 X[column_names] = x_scaler.transform(X)
 
+#Split the data into 80% training and 20% testing
+X_train, X_test, y_train, y_test = train_test_split(X, y test_size = 0.2, shuffle=True)
+
+#Build the model
+model = Sequential()
+model.add(Dense(256, input_dim= len(X.columns) , kernal_initializer= k.initializers.random_normal(seed=13), activation='relu'))
+
+
 
