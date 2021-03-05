@@ -16,7 +16,7 @@ Detect if someone has diabetes using Artificial Intelligence
 """)
 #open and display Image
 
-image =Image.open('/workspace/covid19_Xray_detection/dataset/ai.jpg')
+image =Image.open('/workspace/covid19_Xray_detection/dataset/diabetes.jpg')
 st.image(image, caption='ML' , use_column_width=True)
 
 #Get the data
