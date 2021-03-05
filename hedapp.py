@@ -20,7 +20,7 @@ image =Image.open('/workspace/covid19_Xray_detection/dataset/ai.jpg')
 st.image(image, caption='ML' , use_column_width=True)
 
 #Get the data
-df = pd.read_csv('/workspace/covid19_Xray_detection/dataset/heart_failure_clinical_records_dataset.csv')
+df = pd.read_csv('/workspace/covid19_Xray_detection/dataset/heart_statlog_cleveland_hungary_final.csv')
 #set a subheader
 st.subheader('Data Information')
 #show the data as a table
@@ -31,41 +31,38 @@ st.write(df.describe())
 chart = st.bar_chart(df)
 
 #split the data into independent 'X' and dependent 'Y' variables
-X = df.iloc[:, 0:13].values
-Y = df.iloc[:, -1].values
+X = df.iloc[:, 0:11].values
+Y = df.iloc[:, 0:1].values.ravel()
 #split the data set into 75% Traning and 25% testing
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.25, random_state=0)
 
 #get the feature impot from the user 
 def get_user_input():
-    anaemia = st.sidebar.slider('anaemia', 0, 1, 0)
-    creatinine_phosphokinase = st.sidebar.slider('creatinine_phosphokinase', 20, 3000, 199)
-    ejection_fraction = st.sidebar.slider('ejection_fraction', 0,100,50 )
-    high_blood_pressure = st.sidebar.slider('high_blood_pressure', 0, 0, 1)
-    platelets = st.sidebar.slider('platelets', 30000, 800000, 5000)
-    serum_creatinine = st.sidebar.slider('serum_creatinine', 0.1, 9.0, 0.15)
-    serum_sodium = st.sidebar.slider('serum_sodium', 50, 150, 90)
-    diabetes = st.sidebar.slider('diabetes', 0, 1, 0)
-    sex = st.sidebar.slider('sex', 0, 1, 0)
-    smoking = st.sidebar.slider('smoking', 0, 1, 0)
-    time = st.sidebar.slider('time', 0, 289, 100)
     age = st.sidebar.slider('age', 16, 90, 25)
-    DEATH_EVENT = st.sidebar.slider('DEATH_EVENT', 0, 1, 0)
+    sex = st.sidebar.slider('sex', 0, 1, 0)
+    chest_pain = st.sidebar.slider('chest_pain', 1, 4, 0)
+    resting_bp = st.sidebar.slider('resting_bp', 0, 200, 0)
+    cholesterol = st.sidebar.slider('cholesterol', 0,700,0 )
+    fasting_blood_sugar = st.sidebar.slider('fasting_blood_sugar', 0, 1, 0)
+    resting_ecg = st.sidebar.slider('resting_ecg', 0, 2, 0)
+    max_heart_rate = st.sidebar.slider('max_heart_rate', 71, 202, 73)
+    exercise_angina = st.sidebar.slider('exercise_angina', 0, 1, 0)
+    ST_slope = st.sidebar.slider('ST_slope', 0, 2, 0)
+    oldpeak = st.sidebar.slider('oldpeak', 0.0, 3.0, 1.5)
+     
 
 #store a dictionary into a variable
-    user_data ={'anaemia': anaemia,
-               'creatinine_phosphokinase':creatinine_phosphokinase,
-                ' ejection_fraction':  ejection_fraction,
-                ' high_blood_pressure': high_blood_pressure,
-                 ' platelets': platelets,
-                 ' serum_creatinine': serum_creatinine,
-                 ' serum_sodium': serum_sodium,
-                 ' sex': sex,
-                 'smoking':smoking,
-                 'time': time,
-                 'diabetes': diabetes,
-                 'age': age,
-                 'DEATH_EVENT':DEATH_EVENT,
+    user_data ={'age': age,
+               'sex':sex,
+                'chest_pain':  chest_pain,
+                'resting_bp': resting_bp,
+                 'cholesterol': cholesterol,
+                 'fasting_blood_sugar': fasting_blood_sugar,
+                 'resting_ecg':  resting_ecg,
+                 'max_heart_rate': max_heart_rate,
+                 'exercise_angina': exercise_angina,
+                 'ST_slope': ST_slope,
+                 'oldpeak': oldpeak,
 
             }
     #Transform the data into data frame
