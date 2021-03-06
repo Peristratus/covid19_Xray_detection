@@ -5,9 +5,10 @@ from sklearn.ensemble import RandomForestClassifier
 from PIL import Image
 import streamlit as st
 
-def app():
+
+
 #create a title and sub-title
-         st.write("""
+st.write("""
 
 # Diabetes Detection
 Detect if someone has diabetes using Artificial Intelligence 
