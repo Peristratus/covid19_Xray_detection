@@ -7,8 +7,6 @@ import streamlit as st
 
 
 
-
-
 #create a title and sub-title
 st.write("""
 
