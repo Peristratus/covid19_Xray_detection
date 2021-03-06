@@ -4,8 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from PIL import Image
 import streamlit as st
-
-
+import webbrowser
 
 
 #create a title and sub-title
@@ -83,3 +82,4 @@ prediction = RandomForestClassifier.predict(user_input)
 #set a subheader display the classification
 st.subheader('clasification:')
 st.write(prediction)
+
