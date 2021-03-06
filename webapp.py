@@ -8,9 +8,9 @@ from multiapp import MultiApp
 
 
 def app():
+    global RandomForestClassifier
     st.title(" AI Diabetes Detection")
     st.write("""
-
     
     Detect if someone has diabetes using Artificial Intelligence 
 

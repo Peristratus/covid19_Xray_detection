@@ -4,11 +4,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from PIL import Image
 import streamlit as st
-
+from multiapp import MultiApp
 
 
 
 def app():
+    global RandomForestClassifier
     st.title(" AI Heart Disease Detection")
     st.write("""
     Detect if someone has Heart Disease using Artificial Intelligence 
@@ -78,7 +79,7 @@ def app():
 
     #create and train the model
     RandomForestClassifier = RandomForestClassifier()
-    RandomForestClassifier.fit(X_train,  Y_train )
+    RandomForestClassifier.fit(X_train,Y_train )
 
     #show the model matrix
     st.subheader('Model Test Accuracy Score:')
