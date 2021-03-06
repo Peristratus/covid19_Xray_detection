@@ -9,7 +9,7 @@ import streamlit as st
 
 
 def app():
-    st.title(" AI HD Detection")
+    st.title(" AI Heart Disease Detection")
     st.write("""
     Detect if someone has Heart Disease using Artificial Intelligence 
 
