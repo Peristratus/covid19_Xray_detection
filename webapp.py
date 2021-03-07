@@ -69,15 +69,15 @@ def app():
     st.write(user_input)
 
     #create and train the model
-    RandomForestClassifier = RandomForestClassifier()
-    RandomForestClassifier.fit(X_train,  Y_train )
+    Random = RandomForestClassifier()
+    Random.fit(X_train,  Y_train )
 
     #show the model matrix
     st.subheader('Model Test Accuracy Score:')
-    st.write( str(accuracy_score(Y_test, RandomForestClassifier.predict(X_test)) * 100) + '%')
+    st.write( str(accuracy_score(Y_test, Random.predict(X_test)) * 100) + '%')
 
     #store model prediction ina variable
-    prediction = RandomForestClassifier.predict(user_input)
+    prediction = Random.predict(user_input)
 
     #set a subheader display the classification
     st.subheader('clasification:')
