@@ -17,11 +17,11 @@ def app():
     """)
     #open and display Image
 
-    image =Image.open('/workspace/covid19_Xray_detection/dataset/aiheart.jpg')
+    image =Image.open('dataset/aiheart.jpg')
     st.image(image, caption='ML' , use_column_width=True)
 
     #Get the data
-    df = pd.read_csv('/workspace/covid19_Xray_detection/dataset/heart_statlog_cleveland_hungary_final.csv')
+    df = pd.read_csv('dataset/heart_statlog_cleveland_hungary_final.csv')
     #set a subheader
     st.subheader('Data Information')
     #show the data as a table
