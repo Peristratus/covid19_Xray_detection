@@ -8,7 +8,7 @@ import brcapp
 app = MultiApp()
 
 st.markdown("""
-# MediStar Artificial Intelligence Diagnosis Application
+# MedSTAR Artificial Intelligence Diagnosis Application
 
 This application is built as an Artificial Intelligence (AI) diagnostic center, this software is  dependent on Datasets, it can be used to predict the combained datasets per patient to give a ratio or 
 true/ false indication of a patients future or current Healt status.
