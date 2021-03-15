@@ -31,8 +31,8 @@ def app():
     chart = st.bar_chart(df)
 
     #split the data into independent 'X' and dependent 'Y' variables
-    X = df.iloc[:, 0:8].values
-    Y = df.iloc[:, -1].values
+    X = df.iloc[:, 0:14].values
+    Y = df.iloc[:, 0:1].values.ravel()
     Y=Y.astype('int')
     #split the data set into 75% Traning and 25% testing
     X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.25, random_state=0)
@@ -42,11 +42,17 @@ def app():
         radius_mean = st.sidebar.slider('radius_mean', 0.0, 20.0, 9.5)
         texture_mean = st.sidebar.slider('texture_mean', 0.0, 30.0, 11.0)
         perimeter_mean = st.sidebar.slider('perimeter_mean', 0, 200, 120)
-        area_mean = st.sidebar.slider('area_mean', 0, 3000, 230)
-        smoothness_mean = st.sidebar.slider('smoothness_mean', 0.00, 0.20, 0.13)
+        area_mean = st.sidebar.slider('area_mean', 0, 3000, 230) 
+        smoothness_mean = st.sidebar.slider('smoothness_mean', 0.0, 0.20, 0.13)
         compactness_mean = st.sidebar.slider('compactness_mean', 0.0, 0.5, 0.21)
         concavity_mean = st.sidebar.slider('concavity_mean', 0.0, 0.5 , 0.10)
-        symmetry_mean = st.sidebar.slider('symmetry_mean', 0.0, 0.5, 0.1)
+        concave_points_mean = st.sidebar.slider('concave_points_mean', 0.0, 0.5 , 0.10)
+        symmetry_mean = st.sidebar.slider('symmetry_mean', 0.1, 0.5, 0.1)
+        fractal_dimension_mean= st.sidebar.slider('fractal_dimension_mean', 0.0, 0.5, 0.1)
+        radius_se= st.sidebar.slider('radius_se', 0.1, 2.0, 0.1)
+        texture_se= st.sidebar.slider('texture_se', 0.1, 2.0, 0.1)
+        perimeter_se= st.sidebar.slider('perimeter_se', 1.0, 10.0, 1.5)
+        area_se = st.sidebar.slider('area_se', 0, 100, 11)
 
     #store a dictionary into a variable
         user_data ={'radius_mean': radius_mean,
@@ -56,7 +62,13 @@ def app():
                  'smoothness_mean': smoothness_mean,
                  'compactness_mean':compactness_mean,
                  'concavity_mean':concavity_mean,
+                 'concave_points_mean':concave_points_mean,
                  'symmetry_mean':symmetry_mean,
+                 'fractal_dimension_mean':fractal_dimension_mean,
+                 'radius_se': radius_se,
+                 'texture_se':texture_se,
+                 'perimeter_se':perimeter_se,
+                 'area_se':area_se
                 }
         #Transform the data into data frame
         features = pd.DataFrame(user_data, index=[0])
