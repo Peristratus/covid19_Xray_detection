@@ -16,7 +16,7 @@ def app():
 
     """)
 
-    image =Image.open('dataset/diabetes.jpg')
+    image =Image.open('dataset/AI_beca.jpg')
     st.image(image, caption='ML' , use_column_width=True)
 
     #Get the data
@@ -52,7 +52,7 @@ def app():
         radius_se= st.sidebar.slider('radius_se', 0.1, 2.0, 0.1)
         texture_se= st.sidebar.slider('texture_se', 0.1, 2.0, 0.1)
         perimeter_se= st.sidebar.slider('perimeter_se', 1.0, 10.0, 1.5)
-        area_se = st.sidebar.slider('area_se', 0, 100, 11)
+        area_se = st.sidebar.slider('area_se', 0, 220, 11)
 
     #store a dictionary into a variable
         user_data ={'radius_mean': radius_mean,
