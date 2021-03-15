@@ -3,6 +3,7 @@ from multiapp import MultiApp
 import home
 import webapp
 import hedapp
+import brcapp
 
 app = MultiApp()
 
@@ -18,5 +19,6 @@ true/ false indication of a patients future or current Healt status.
 app.add_app("Home", home.app)
 app.add_app("AI Diabetes Detection", webapp.app)
 app.add_app("AI Heart Disease Detection", hedapp.app)
+app.add_app("AI breast cancer Detection", brcapp.app)
 # The main app
 app.run()
